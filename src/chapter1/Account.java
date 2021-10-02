@@ -1,9 +1,21 @@
 package chapter1;
 
 public class Account {
-    public Account(int balance){}
+    private int balance;
+
+    public Account(int money){
+        this.balance= money;
+    }
 
     public int getBalance() {
-        return 10000;
+        return balance;
+    }
+
+    public void deposit(int money) {
+        balance += money;
+    }
+
+    public void withdraw(int money) {
+        balance -= money;
     }
 }

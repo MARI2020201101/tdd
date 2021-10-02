@@ -3,6 +3,8 @@ package chapter1;
 import org.junit.Assert;
 import org.junit.Test;
 
+import static org.junit.Assert.*;
+
 public class AccountTest {
 
     @Test
@@ -13,15 +15,24 @@ public class AccountTest {
     public void testGetBalance(){
         Account account = new Account(10000);
         int balance = account.getBalance();
-        Assert.assertEquals(balance,10000);
+        assertEquals(10000,balance);
+
+        Account account2 = new Account(0);
+        int balance2 = account2.getBalance();
+        assertEquals(0,balance2);
+    }
+    @Test
+    public void testWithdraw(){
+        Account account = new Account(1000);
+        account.withdraw(100);
+        assertEquals(900, account.getBalance());
+    }
+    @Test
+    public void testDeposit(){
+        Account account = new Account(1000);
+        account.deposit(100);
+        assertEquals(1100, account.getBalance());
     }
 
 
-    /*public static void main(String[] args) {
-        try {
-            testAccount();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }*/
 }
