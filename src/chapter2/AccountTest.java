@@ -1,14 +1,17 @@
-package chapter1;
+package chapter2;
 
-import org.junit.Assert;
+import chapter1.Account;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class AccountTest {
+    public AccountTest(){
+        System.out.println("im test~~~~");
+    }
 
-    private Account account;
+    private chapter1.Account account;
 
     @Test
     public void testAccount() throws Exception{
@@ -17,7 +20,7 @@ public class AccountTest {
 
     @Before
     public void setup() {
-        account = new Account(10000);
+        account = new chapter1.Account(10000);
     }
 
     @Test
@@ -25,7 +28,7 @@ public class AccountTest {
         int balance = account.getBalance();
         assertEquals(10000,balance);
 
-        Account account2 = new Account(0);
+        chapter1.Account account2 = new Account(0);
         int balance2 = account2.getBalance();
         assertEquals(0,balance2);
     }
